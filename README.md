@@ -21,4 +21,12 @@ in this Angular project,
     - [X] write method signOut(), saveToken(), getToken(), saveUser(), getUser() in token storage service
     - [X] implement data service provides methods to access public and protected resources
     - [X] use interceptors to implement authentication for users and authorization for requests
-4. work on model or data structure
+4. work on components
+    - [] implement register component
+    - [] implement login component
+    - [] implement profile component
+    - [] create public component to get public accessable data from the back end
+    - [] create role-based or protected components for dev, consumer, and admin
+5. work on model or data structure
+6. work on HTML view pages
+7. configure routing
