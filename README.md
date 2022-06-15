@@ -19,5 +19,6 @@ in this Angular project,
     - [X] implement authentication service class sends signup, login HTTP requests to the back-end
     - [X] implement token storage service to manage token, user info inside browser session storage
     - [X] write method signOut(), saveToken(), getToken(), saveUser(), getUser() in token storage service
-    - [] implement data service provides methods to access public and protected resources
+    - [X] implement data service provides methods to access public and protected resources
+    - [X] use interceptors to implement authentication for users and authorization for requests
 4. work on model or data structure
