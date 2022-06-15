@@ -11,10 +11,13 @@ in this Angular project,
 # Work Book
 
 1. create this project, components, services, classes, models, views
-    [X] understand the how, using angular CLI
-    [X] generate boards, helpers, jwt token storage, login, register, profile, home page
+    - [X] understand the how, using angular CLI
+    - [X] generate boards, helpers, jwt token storage, login, register, profile, home page
 2. import angular modules in app.module.ts
-    [X] understand component declaration, imports, providers in @ngModule
+    - [X] understand component declaration, imports, providers in @ngModule
 3. work on services classes
-    [X] implement authentication service class sends signup, login HTTP requests to the back-end
-    [] implement token storage service to manage token, user info inside browser session storage
+    - [X] implement authentication service class sends signup, login HTTP requests to the back-end
+    - [X] implement token storage service to manage token, user info inside browser session storage
+    - [X] write method signOut(), saveToken(), getToken(), saveUser(), getUser() in token storage service
+    - [] implement data service provides methods to access public and protected resources
+4. work on model or data structure
