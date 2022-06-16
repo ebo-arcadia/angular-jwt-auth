@@ -50,11 +50,30 @@ in this Angular and Node.js project,
 1. work on starting the back end server
     - [X] initialize node.js app with package.json file
     - [X] install modules
+    - [X] create an entry file used to start the server
 2. work on configuration
     - [X] create mySQL configuration
     - [] create auth key configuration
 3. work on models & database schema
     - [X] create user model for username, password, email
     - [X] create role model for admin, developer, consumer
+4. work on features to handle authentication & verification
+    - [X] create a secret key string to encode and decode token
+    - [X] create middleware to verify signup not duplicated, roles exist
+    - [X] implement methods to check if token is provided, legal or not
+    - [X] implement method to check if user contains required role or not
+    - [X] package all methods for authentication & authorization into one module
+5. work on controller
+    - [] implement functions to handle sign up creating new user in database
+    - [] implement functions comparing login credentials against database
+    - [] generate & return access token & user info
+    - [] define routes REST POST to render content for authentication token
+    - [] define routes REST GET to render content based on authorization roles
+    - [] make routes available in the server entry file
+6. run & test results
+    - [] if connected to mySQL database
+    - [] if table is generated
+    - [] if table structure is correct
+    - [] if URL links are working using postman
 
 
