@@ -40,3 +40,16 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+back-end-server/node_modules
+back-end-server/npm-debug.log
+back-end-server/yarn-error.log
+back-end-server/.idea/
+back-end-server/.project
+back-end-server/.classpath
+back-end-server/.c9/
+back-end-server/*.launch
+back-end-server/.settings/
+back-end-server/*.sublime-workspace
+back-end-server/.DS_Store
+back-end-server/Thumbs.db
