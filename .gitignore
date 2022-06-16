@@ -41,6 +41,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# back-end-server
 back-end-server/node_modules
 back-end-server/npm-debug.log
 back-end-server/yarn-error.log
