@@ -34,14 +34,16 @@ in this Angular and Node.js project,
     - [X] implement data service provides methods to access public and protected resources
     - [X] use interceptors to implement authentication for users and authorization for requests
 4. work on components
-    - [] implement register component
+    - [X] implement register component
     - [] implement login component
     - [] implement profile component
     - [] create public component to get public accessable data from the back end
     - [] create role-based or protected components for dev, consumer, and admin
-5. work on model or data structure
-6. work on HTML view pages
-7. configure routing
+5. work on HTML view pages
+    - [X] add form validation for username, password, email in register view page
+6. configure routing
+7. work on model or data structure
+    - [] implement database schema, data structure in the backend
 
 ## for Node.js
 1. work on starting the back end server
