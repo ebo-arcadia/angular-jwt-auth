@@ -35,6 +35,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.json({ message: "back end server is running now" });
 });
+require('./app/routes/auth.routes')(app)
+require('./app/routes/user.routes')(app)
 // set port, listen for requests
 const PORT = process.env.PORT || 8040;
 app.listen(PORT, () => {

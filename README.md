@@ -71,10 +71,10 @@ in this Angular and Node.js project,
 5. work on controller
     - [X] implement functions to handle sign up creating new user in database
     - [X] implement functions comparing login credentials against database for login
-    - [] generate & return access token & user info
-    - [] define routes REST POST to render content for authentication token
-    - [] define routes REST GET to render content based on authorization roles
-    - [] make routes available in the server entry file
+    - [X] generate & return access token & user info
+    - [X] define routes REST POST respond user request for authentication
+    - [X] define routes REST GET to respond user request content authorization roles
+    - [X] make routes available in the server entry file
 6. run & test results
     - [] if connected to mySQL database
     - [] if table is generated
