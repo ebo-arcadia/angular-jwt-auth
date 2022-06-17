@@ -38,12 +38,12 @@ in this Angular and Node.js project,
     - [X] implement login component
     - [X] implement profile component
     - [X] create public component to get public accessable data from the back end
-    - [] create role-based or protected components for dev, consumer, and admin
+    - [X] create role-based or protected components for dev, consumer, and admin
 5. work on HTML view pages
     - [X] add form validation for username, password, email in register view page
     - [X] add form for username, password, input validation in login view page
     - [X] render content for public obtained to home view page
-    - [] render role based content to each view page, developer, admin, consumer
+    - [X] render role based content to each view page, developer, admin, consumer
 6. configure routing
 7. work on model or data structure
     - [] implement database schema, data structure in the backend
