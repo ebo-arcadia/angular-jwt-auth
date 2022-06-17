@@ -44,9 +44,12 @@ in this Angular and Node.js project,
     - [X] add form for username, password, input validation in login view page
     - [X] render content for public obtained to home view page
     - [X] render role based content to each view page, developer, admin, consumer
+    - [x] add navigation bar with available routes
 6. configure routing
+    - [X] configure routes URL 
+    - [X] display component content with corresponding routes, incorporate navigation bar using directive 
 7. work on model or data structure
-    - [] implement database schema, data structure in the backend
+    - [X] implement database schema, data structure in the backend
 
 ## for Node.js
 1. work on starting the back end server
