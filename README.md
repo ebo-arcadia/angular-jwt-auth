@@ -69,8 +69,8 @@ in this Angular and Node.js project,
     - [X] implement method to check if user contains required role or not
     - [X] package all methods for authentication & authorization into one module
 5. work on controller
-    - [] implement functions to handle sign up creating new user in database
-    - [] implement functions comparing login credentials against database
+    - [X] implement functions to handle sign up creating new user in database
+    - [X] implement functions comparing login credentials against database for login
     - [] generate & return access token & user info
     - [] define routes REST POST to render content for authentication token
     - [] define routes REST GET to render content based on authorization roles
