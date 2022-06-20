@@ -1,8 +1,8 @@
 module.exports = {
     HOST: "localhost",
     USER: "root",
-    PASSWORD: "123456",
-    DB: "testdb",
+    PASSWORD: "Ebo$usingmysql2022",
+    DB: "jwtAuth",
     dialect: "mysql",
     pool: {
       max: 5,

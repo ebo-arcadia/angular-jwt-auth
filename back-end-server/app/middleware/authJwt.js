@@ -15,22 +15,24 @@ verifyToken = (req, res, next) => {
         req.userId = decoded.id;
         next();
     });
-}
-
-isAmin = (req, res, next) => {
-    User.findByPk(req.userId).then(user => {
-        user.getRoles().then(roles => {
-            for (let i = 0; i < roles.length; i++) {
-                if (roles[i].name === "admin") {
-                    next();
-                    return;
-                }
-            }
-            res.status(403).send({ message: "Require admin role!"});
-            return;
-        });
-    });
 };
+
+isAdmin = (req, res, next) => {
+    User.findByPk(req.userId).then(user => {
+      user.getRoles().then(roles => {
+        for (let i = 0; i < roles.length; i++) {
+          if (roles[i].name === "admin") {
+            next();
+            return;
+          }
+        }
+        res.status(403).send({
+          message: "Require Admin Role!"
+        });
+        return;
+      });
+    });
+  };
 
 isConsumer = (req, res, next) => {
     User.findByPk(req.userId).then(user => {
