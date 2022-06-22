@@ -14,11 +14,11 @@ function initial() {
         name: "consumer"
     });
     Role.create({
-        id: 1,
+        id: 2,
         name: "admin"
     });
     Role.create({
-        id: 1,
+        id: 3,
         name: "developer"
     });
 }

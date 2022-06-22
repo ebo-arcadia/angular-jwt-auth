@@ -76,7 +76,7 @@ in this Angular and Node.js project,
     - [X] define routes REST GET to respond user request content authorization roles
     - [X] make routes available in the server entry file
 6. run & test results
-    - [] if connected to mySQL database
+    - [X] if connected to mySQL database
     - [] if table is generated
     - [] if table structure is correct
     - [] if URL links are working using postman
