@@ -1,4 +1,4 @@
-exports.allAccess = (req, res) => { res.status(200).send("Public Content") };
-exports.adminBoard = (req, res) => { res.status(200).send("Admin Content") };
-exports.consumerBoard = (req, res) => { res.status(200).send("Consumer Content") };
-exports.developerBoard = (req, res) => { res.status(200).send("Developer Content") };
+exports.allAccess = (req, res) => { res.status(200).send("you have successfully accesseed the unrestricted public content") };
+exports.adminBoard = (req, res) => { res.status(200).send("Access to ADMIN role scope content: success") };
+exports.consumerBoard = (req, res) => { res.status(200).send("Access to CONSUMER role scope content: success") };
+exports.developerBoard = (req, res) => { res.status(200).send("Access to DEVELOPER role scope content: success") };
