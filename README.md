@@ -50,15 +50,29 @@ in this Angular and Node.js project,
     - [X] display component content with corresponding routes, incorporate navigation bar using directive 
 7. work on model or data structure
     - [X] implement database schema, data structure in the backend
+8. run & test results
+    - [X] web app server starts successfully
+    - [X] user is able to register successfully
+    - [X] user profile data is created in the table in the database
+    - [X] successful registration message is returned in the Response object by the back end server
+    - [X] user is able to log in as an existing user
+    - [X] user is able to see profile info on the view page once logged in
+    - [X] user is able to see role based content on view page once logged in
+    - [X] user receives invalid message if invalid password when log in
+    - [X] user receives error message if username,email,password are invalid
+    - [X] user is able to log out
+9. refactor & enhancement
+    - [] user is able to select roles upon sign up
+    - [] render real protected data onto view page when user logged in
 
 ## for Node.js
 1. work on starting the back end server
     - [X] initialize node.js app with package.json file
     - [X] install modules
     - [X] create an entry file used to start the server
-2. work on configuration
+2. work on configurations
     - [X] create mySQL configuration
-    - [] create auth key configuration
+    - [X] create auth key configuration
 3. work on models & database schema
     - [X] create user model for username, password, email
     - [X] create role model for admin, developer, consumer
@@ -77,8 +91,13 @@ in this Angular and Node.js project,
     - [X] make routes available in the server entry file
 6. run & test results
     - [X] if connected to mySQL database
-    - [] if table is generated
-    - [] if table structure is correct
-    - [] if URL links are working using postman
+    - [X] if table is generated
+    - [X] if table structure is correct
+    - [X] if URL links are working using postman
+7. refactor & enhancement
+    - [] JWT refresh token implementation
+    - [] User can switch roles
+    - [] implement other types of database such as noSQL
+    - [] store JWT in HttpOnly Cookie
 
 
