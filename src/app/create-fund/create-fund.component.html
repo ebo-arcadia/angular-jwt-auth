@@ -1,1 +1,23 @@
-<p>create-fund works!</p>
+<div class="row">
+    <div  class="col-md-8 col-xl-6 mx-auto">
+        <div class="card mt-1">
+            <div class="card-header">
+                <h2>Create a fund</h2>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <form [formGroup]="createFundForm" (ngSubmit)="onSubmit()">
+                <div class="form-group form-row">
+                    <label for="fundName"  class="col-md-4 col-form-label">Fund Name</label>
+                    <div class="col-md-8">
+                        <input type="text" name="fundName" id="fundName" placeholder="Fund Name" class="form-control" formControlName="fundName" >
+                    </div>
+                </div>
+            </form>
+            {{ createFundForm.value | json }}
+        </div>
+
+    </div>
+</div>
+

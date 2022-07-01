@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+import { CreateFundComponent } from './create-fund/create-fund.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'consumer', component: BoardConsumerComponent},
   {path: 'admin', component: BoardAdminComponent},
   {path: 'developer', component: BoardDeveloperComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'create-fund', component: CreateFundComponent },
 ];
 
 @NgModule({

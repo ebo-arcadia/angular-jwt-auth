@@ -103,14 +103,16 @@ in this Angular and Node.js project,
 
 ### create a create fund page using model-driven forms technique
     steps to implement
-        - [] define a new instance of form control class
-        - [] define controls using form control class
-        - [] assign instance to a property on the component
-        - [] define default values for each control value
-        - [] pass validation to the form control
-        - [] define async validation passing it as an argument to form control
-        - [] associate inputs in the template to the control properties using directive
-        - [] add message to show error messages on the HTML page if errors returned by the validator
+        [X] import reactive or model driven forms module
+        [X] create a route to invoke the component 
+        [X] define a new instance of form control class
+        [X] define control instance using form control class
+        [X] assign instance to a property on the component
+        [X] define default values for each property
+        [X] pass validation to the form control
+        [X] associate inputs in the template to the control properties using directive
+        [] add message to show error messages on the HTML page if errors returned by the validator
+        [] define async validation passing it as an argument to form control
 
 ### create a sign up portal using template-driven forms technique
 

@@ -3,6 +3,10 @@
     <a href="#" class="navbar-brand">In</a>
 
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item"><a href="/create-fund" class="nav-link" routerLink="create-fund">Create a fund</a></li>
+    </ul>
+
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item" *ngIf="isLoggedIn">
         <a href="/home" class="nav-link" routerLink="home">Home</a>
       </li>
@@ -24,7 +28,6 @@
       <li class="nav-item">
         <a href="/login" class="nav-link" routerLink="login">Log in</a>
       </li>
-      <li><a></a></li>
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">

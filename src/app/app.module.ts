@@ -10,7 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardConsumerComponent } from './board-consumer/board-consumer.component';
 import { BoardDeveloperComponent } from './board-developer/board-developer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { CreateFundComponent } from './create-fund/create-fund.component';
@@ -31,7 +31,8 @@ import { CreateFundComponent } from './create-fund/create-fund.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
