@@ -11,16 +11,10 @@ export class CreateFundComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.initForm();
-  }
-
-  private initForm() {
-    this.createFundForm = new FormControl({
+  ngOnInit() {
+    this.createFundForm = new FormGroup({
       fundName: new FormControl('e.g. S&P 500', Validators.required)
-    })
+    });
   }
-
-  onSubmit() { console.log(this.createFundForm)};
 
 }
