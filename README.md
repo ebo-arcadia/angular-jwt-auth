@@ -101,7 +101,7 @@ in this Angular and Node.js project,
     todo: user is able to select roles upon sign up
     todo: render real protected data onto view page when user logged in
 
-### create a sign up page using model-driven forms technique
+### create a create fund page using model-driven forms technique
     steps to implement
         - [] define a new instance of form control class
         - [] define controls using form control class

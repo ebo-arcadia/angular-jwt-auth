@@ -13,6 +13,7 @@ import { BoardDeveloperComponent } from './board-developer/board-developer.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { CreateFundComponent } from './create-fund/create-fund.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     ProfileComponent,
     BoardAdminComponent,
     BoardConsumerComponent,
-    BoardDeveloperComponent
+    BoardDeveloperComponent,
+    CreateFundComponent
   ],
   imports: [
     BrowserModule,
