@@ -3,8 +3,8 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/app.js",
+      "name": "node debugger",
+      "program": "${workspaceFolder}/test-debugging.js",
       "request": "launch",
       "skipFiles": [
         "<node_internals>/**"
