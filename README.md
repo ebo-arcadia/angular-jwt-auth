@@ -9,6 +9,9 @@ in this Angular and Node.js project,
 - how to enable user to access protected resources only when authenticated?
 - how to add dynamic navigation bar to the web app?
 - how to use browser session storage to manage token and user info?
+- how to create forms using template-driven techniques?
+- how to create forms using model-driven forms techniques?
+- what are the differences between template-driven and model-driven techniques? Pros and cons using each? 
 
 ## for back end
 - how is the flow of authentication and authorization accomplished?
@@ -18,7 +21,7 @@ in this Angular and Node.js project,
 - how to define data models and association for authentication & authorization
 - how to yse Sequelize to interact with MySQL database?
 
-# Work Book
+# Project plan and implementation tracking
 
 ## for Angular
 
@@ -61,9 +64,6 @@ in this Angular and Node.js project,
     - [X] user receives invalid message if invalid password when log in
     - [X] user receives error message if username,email,password are invalid
     - [X] user is able to log out
-9. refactor & enhancement
-    - [] user is able to select roles upon sign up
-    - [] render real protected data onto view page when user logged in
 
 ## for Node.js
 1. work on starting the back end server
@@ -94,10 +94,28 @@ in this Angular and Node.js project,
     - [X] if table is generated
     - [X] if table structure is correct
     - [X] if URL links are working using postman
-7. refactor & enhancement
-    - [] JWT refresh token implementation
-    - [] User can switch roles
-    - [] implement other types of database such as noSQL
-    - [] store JWT in HttpOnly Cookie
 
+# Refactor & enhancement & new features
 
+## for Angular
+    todo: user is able to select roles upon sign up
+    todo: render real protected data onto view page when user logged in
+
+### create a sign up page using model-driven forms technique
+    steps to implement
+        - [] define a new instance of form control class
+        - [] define controls using form control class
+        - [] assign instance to a property on the component
+        - [] define default values for each control value
+        - [] pass validation to the form control
+        - [] define async validation passing it as an argument to form control
+        - [] associate inputs in the template to the control properties using directive
+        - [] add message to show error messages on the HTML page if errors returned by the validator
+
+### create a sign up portal using template-driven forms technique
+
+## for Node JS
+    todo: JWT refresh token implementation
+    todo: User can switch roles
+    todo: implement other types of database such as noSQL
+    todo: store JWT in HttpOnly Cookie
