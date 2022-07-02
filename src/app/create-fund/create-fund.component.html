@@ -8,12 +8,31 @@
 
         <div class="card-body">
             <form [formGroup]="createFundForm">
+
                 <div class="form-group form-row">
                     <label for="fundName"  class="col-md-4 col-form-label">Fund Name</label>
                     <div class="col-md-8">
-                        <input type="text" name="fundName" id="fundName" placeholder="Fund Name" class="form-control" formControlName="fundName">
+                        <input type="text" name="fundName" id="fundName" placeholder="e.g. Vanguard all-weather" class="form-control" formControlName="fundName">
                     </div>
                 </div>
+
+                <div class="form-group form-row">
+                    <label for="benchmark"  class="col-md-4 col-form-label">Benchmark</label>
+                    <div class="col-md-8">
+                        <input type="text" name="benchmark" id="benchmark" placeholder='e.g. S&P 500' class="form-control" formControlName="benchmark">
+                    </div>
+                </div>
+
+                <div class="form-group form-row">
+                    <label class="col-md-4 col-form-label">Access Scope: </label>
+
+                    <div class="form-check-label form-check-inline" *ngFor="let accessScope of accessScopes">
+                        <label [for]="accessScope" class="form-check-label">{{accessScope}}</label>
+                        <input type="radio" name="accessScope" [id]="accessScope" [value]="accessScope" class="form-check-input" formControlName="accessScope">
+                    </div>
+                </div>
+
+
             </form>
             {{ createFundForm.value | json }}
         </div>

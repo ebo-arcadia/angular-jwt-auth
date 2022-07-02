@@ -8,12 +8,15 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class CreateFundComponent implements OnInit {
   createFundForm: FormGroup | any = null;
+  accessScopes = ["unrestricted", "internal", "limited", "confidential", "public", "specific"]
 
   constructor() { }
 
   ngOnInit() {
     this.createFundForm = new FormGroup({
-      fundName: new FormControl('e.g. S&P 500', Validators.required)
+      fundName: new FormControl(null, Validators.required),
+      benchmark: new FormControl(null, Validators.required),
+      accessScope: new FormControl(null, Validators.required),
     });
   }
 

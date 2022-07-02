@@ -102,7 +102,7 @@ in this Angular and Node.js project,
     todo: render real protected data onto view page when user logged in
 
 ### create a create fund page using model-driven forms technique
-    steps to implement
+    1. steps to implement
         [X] import reactive or model driven forms module
         [X] create a route to invoke the component 
         [X] define a new instance of form control class
@@ -111,6 +111,12 @@ in this Angular and Node.js project,
         [X] define default values for each property
         [X] pass validation to the form control
         [X] associate inputs in the template to the control properties using directive
+    2. add input, button, radio button, drop down list, check box
+        [X] create new from control object
+        [X] create html tags
+        [X] bind user input to control form object using property binding technique
+        [X] generate radio button values dynamically
+    3. additional features
         [] add message to show error messages on the HTML page if errors returned by the validator
         [] define async validation passing it as an argument to form control
 
