@@ -116,7 +116,15 @@ in this Angular and Node.js project,
         [X] create html tags
         [X] bind user input to control form object using property binding technique
         [X] generate radio button values dynamically
-    3. additional features
+        [X] generate a dynamic drop down list using class, service, and component
+    3. implement dynamic drop down list
+        [] generate a class defining data structure
+        [] generate a service class defining get data method
+        [] import and initialize service class object to call get data method
+        [] define a variable and store received data in it
+        [] bind user input using form contorl
+        [] render data received saved in component onto user view page
+    4. additional features
         [] add message to show error messages on the HTML page if errors returned by the validator
         [] define async validation passing it as an argument to form control
 

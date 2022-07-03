@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "node debugger",
+      "name": "node testing debugger",
       "program": "${workspaceFolder}/test-debugging.js",
       "request": "launch",
       "skipFiles": [

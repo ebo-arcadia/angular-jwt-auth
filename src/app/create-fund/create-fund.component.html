@@ -33,6 +33,27 @@
                 </div>
 
 
+                <div class="form-group form-row">
+                    <label for="attributeID"  class="col-md-4 col-form-label">Fund Attribute: </label>
+                    <div class="col-md-8">
+                        <select name="attributeID" id="attributeID" class="form-control" formControlName="attributeName">
+                            <option value="null">Selecte a fund attribute</option>
+                            <option *ngFor="let fundAttribute of fundAttributes" [value]="fundAttribute.attributeName">
+                                {{ fundAttribute.attributeName }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group form-row">
+                    <label for="col-md-4 col-form-label"></label>
+                    <div class="col-md-8">
+                        <input type="checkbox" name="launchStatus" id="launchStatus" value="true" class="form-check-input" formControlName="launchStatus">
+                        <label for="launchStatus">Fund Launch Status</label>
+                    </div>
+                </div>
+
+
             </form>
             {{ createFundForm.value | json }}
         </div>
