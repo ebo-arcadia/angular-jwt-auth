@@ -118,13 +118,15 @@ in this Angular and Node.js project,
         [X] generate radio button values dynamically
         [X] generate a dynamic drop down list using class, service, and component
     3. implement dynamic drop down list
-        [] generate a class defining data structure
-        [] generate a service class defining get data method
-        [] import and initialize service class object to call get data method
-        [] define a variable and store received data in it
-        [] bind user input using form contorl
-        [] render data received saved in component onto user view page
+        [X] generate a class defining data structure
+        [X] generate a service class defining get data method
+        [X] import and initialize service class object to call get data method
+        [X] define a variable and store received data in it
+        [X] bind user input using form contorl
+        [X] render data received saved in component onto user view page
     4. additional features
+        [X] detect changes made in the form elements in reactive forms?
+        [X] use set value, patch value, reset value to work with user input
         [] add message to show error messages on the HTML page if errors returned by the validator
         [] define async validation passing it as an argument to form control
 
