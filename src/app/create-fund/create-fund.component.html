@@ -1,67 +1,132 @@
 <div class="row">
     <div  class="col-md-8 col-xl-6 mx-auto">
         <form [formGroup]="createFundForm" (ngSubmit)="onSubmit(buttonType)">
-        <div class="card mt-1">
-            <div class="card-header">
-                <h2>Create a fund</h2>
+            <div class="card mt-1">
+                <div class="card-header">
+                    <h2>Create a fund</h2>
+                </div>
             </div>
-        </div>
 
-        <div class="card-body">
-            
-                <div class="form-group form-row">
-                    <label for="fundName"  class="col-md-4 col-form-label">Fund Name</label>
-                    <div class="col-md-8">
-                        <input type="text" name="fundName" id="fundName" placeholder="e.g. Vanguard all-weather" class="form-control" formControlName="fundName">
+            <div class="card-body">
+                
+                    <div class="form-group form-row">
+                        <label for="fundName"  class="col-md-4 col-form-label">Fund Name</label>
+                        <div class="col-md-8">
+                            <input type="text" name="fundName" id="fundName" placeholder="e.g. Vanguard all-weather" class="form-control" formControlName="fundName">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group form-row">
-                    <label for="benchmark"  class="col-md-4 col-form-label">Benchmark</label>
-                    <div class="col-md-8">
-                        <input type="text" name="benchmark" id="benchmark" placeholder='e.g. S&P 500' class="form-control" formControlName="benchmark">
+                    <div class="form-group form-row">
+                        <label for="benchmark"  class="col-md-4 col-form-label">Benchmark</label>
+                        <div class="col-md-8">
+                            <input type="text" name="benchmark" id="benchmark" placeholder='e.g. S&P 500' class="form-control" formControlName="benchmark">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group form-row">
-                    <label class="col-md-4 col-form-label">Fund Status: </label>
+                    <div class="form-group form-row">
+                        <label class="col-md-4 col-form-label">Fund Status: </label>
 
-                    <div class="form-check-label form-check-inline" *ngFor="let status of fundStatus">
-                        <label [for]="status" class="form-check-label">{{status}}</label>
-                        <input type="radio" name="fundStatus" [id]="status" [value]="status" class="form-check-input" formControlName="fundStatus">
+                        <div class="form-check-label form-check-inline" *ngFor="let status of fundStatus">
+                            <label [for]="status" class="form-check-label">{{status}}</label>
+                            <input type="radio" name="fundStatus" [id]="status" [value]="status" class="form-check-input" formControlName="fundStatus">
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="form-group form-row">
-                    <label for="attributeID"  class="col-md-4 col-form-label">Fund Attribute: </label>
-                    <div class="col-md-8">
-                        <select name="attributeID" id="attributeID" class="form-control" formControlName="attributeName">
-                            <option value="null">Selecte a fund attribute</option>
-                            <option *ngFor="let fundAttribute of fundAttributes" [value]="fundAttribute.attributeName">
-                                {{ fundAttribute.attributeName }}
-                            </option>
-                        </select>
+                    <div class="form-group form-row">
+                        <label for="attributeID"  class="col-md-4 col-form-label">Fund Attribute: </label>
+                        <div class="col-md-8">
+                            <select name="attributeID" id="attributeID" class="form-control" formControlName="attributeName">
+                                <option value="null">Selecte a fund attribute</option>
+                                <option *ngFor="let fundAttribute of fundAttributes" [value]="fundAttribute.attributeName">
+                                    {{ fundAttribute.attributeName }}
+                                </option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group form-row">
-                    <label for="col-md-4 col-form-label"></label>
-                    <div class="col-md-8">
-                        <input type="checkbox" name="watchThisFund" id="watchThisFund" value="true" class="form-check-input" formControlName="watchThisFund">
-                        <label for="watchThisFund">Watch this fund?</label>
+                    <div class="form-group form-row">
+                        <label for="col-md-4 col-form-label"></label>
+                        <div class="col-md-8">
+                            <input type="checkbox" name="watchThisFund" id="watchThisFund" value="true" class="form-check-input" formControlName="watchThisFund">
+                            <label for="watchThisFund">Watch this fund?</label>
+                        </div>
                     </div>
-                </div>
-            {{ createFundForm.value | json }}
-        </div>
 
-        <div class="card-footer">
-            <button class="btn btn-success float-right" (click)="onSubmit('Create Fund')">Create Fund</button>
-            <button class="btn btn-success float-right" (click)="onSubmit('Set Fund')">Set Fund</button>
-            <button class="btn btn-success float-right" (click)="onSubmit('Patch Fund')">Patch Fund</button>
-            <button class="btn btn-success float-right" (click)="onSubmit('Reset Fund')">Reset Fund</button>
-        </div>
+                    
+                    <div class="form-group form-row">
+                        <label for="customizedAttributes"  class="col-md-4 col-form-label">Customized Fund Attributes</label>
+                        <div class="col-md-8" formArrayName="customizedFundAttributes">
+                            <div *ngFor="let customizedFundAttribute of createFundForm.get('customizedFundAttributes').controls; let i = index" [formGroupName]="i">
+
+                                <div class="col-13 float-right">
+                                    <input type="text" name="attributeName" id="attributeName" placeholder="attribute name" class="form-control" formControlName="attributeName">
+                                </div>
+
+                                <div class="col-13 float-right">
+                                    <select class="form-control" formControlName="attributeScope" name="attributeScope" id="attributeScope" name="attributeScope">
+                                        <option value="null">Please select an attribute scope</option>
+                                        <option>Fund-characteristics</option>
+                                        <option>Fund-tradings</option>
+                                        <option>Fund-taxes</option>
+                                        <option>Fund-names</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-13">
+                                    <button class="btn btn-danger float-right" type="button" (click)="OnRemoveCuztomizedFundAttribute(i)">Remove</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" (click)="onAddCustomizedFundAttribute()">Add customized attributes</button>
+                    </div>
+
+                {{ createFundForm.value | json }}
+            </div>
+
+            <div class="card-footer">
+                <button class="btn btn-success float-right" (click)="onSubmit('Create Fund')">Create Fund</button>
+                <button class="btn btn-success float-right" (click)="onSubmit('Set Fund')">Set Fund</button>
+                <button class="btn btn-success float-right" (click)="onSubmit('Patch Fund')">Patch Fund</button>
+                <button class="btn btn-success float-right" (click)="onSubmit('Reset Fund')">Reset Fund</button>
+            </div>
         </form>
+
+        <!-- nested form section -->
+        <form [formGroup]="fundInfoForm" (ngSubmit)="onSubmitFundInfo()">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h2>Fund Info</h2>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group form-row" formGroupName="fundSpec">
+                    <label for="fundType"  class="col-md-4 col-form-label">Fund Type</label>
+                    <div class="col-md-8">
+                        <input type="text" name="fundType" id="fundType" placeholder="e.g. ETF" class="form-control" formControlName="fundType">
+                    </div>
+                </div>
+                <div class="form-group form-row" formGroupName="fundSpec">
+                    <label for="fundRegion"  class="col-md-4 col-form-label">Fund Region</label>
+                    <div class="col-md-8">
+                        <input type="text" name="fundRegion" id="fundRegion" placeholder="e.g. EUR" class="form-control" formControlName="fundRegion">
+                    </div>
+                </div>
+                <div class="form-group form-row" formGroupName="fundSpec">
+                    <label for="fundMarket"  class="col-md-4 col-form-label">Fund Market</label>
+                    <div class="col-md-8">
+                        <input type="text" name="fundMarket" id="fundMarket" placeholder="e.g. NASDA" class="form-control" formControlName="fundMarket">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <button class="btn btn-warning float-left">Submit fund type</button>
+            </div>
+        </form>
+
     </div>
 </div>
 

@@ -124,9 +124,22 @@ in this Angular and Node.js project,
         [X] define a variable and store received data in it
         [X] bind user input using form contorl
         [X] render data received saved in component onto user view page
-    4. additional features
+    4. implemnt in-place editable table with multiple form controls per line
+        [X] import form array APIX
+        [X] initialize a variable or object as an empty array
+        [X] iterate the array using ngFor directive in the view page
+        [X] for each item in the array, display it using interpolation binding
+        [X] create a button user can add items in the array
+        [X] add a method called when user clicks on the add button which then type cast form group into form array type
+        [X] programmatically add form groups to form array
+        [X] bind each group control to the corresponding form contorl name defined in the form group
+        [X] bind the form group name to the index value to the parent in the html tag
+        [X] specify the form array name in the parent html tag
+        [X] create a button when clicked removes the form control item using item index
+    5. additional features
         [X] detect changes made in the form elements in reactive forms?
         [X] use set value, patch value, reset value to work with user input
+        [X] implement nested form groups to keep form controls organzied
         [] add message to show error messages on the HTML page if errors returned by the validator
         [] define async validation passing it as an argument to form control
 

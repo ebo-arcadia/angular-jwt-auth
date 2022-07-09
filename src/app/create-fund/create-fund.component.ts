@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray} from '@angular/forms';
 import { FundAttributes } from './fund-attributes';
 import { FundAttributesService } from './fund-attributes.service';
 
@@ -13,6 +13,8 @@ export class CreateFundComponent implements OnInit {
   fundStatus = ["launched", "pre-launch"];
   fundAttributes: FundAttributes[] = [];
 
+  fundInfoForm: FormGroup | any = null;
+
   constructor(private fundAttributesService: FundAttributesService) { }
 
   ngOnInit() {
@@ -23,12 +25,27 @@ export class CreateFundComponent implements OnInit {
       benchmark: new FormControl(null, Validators.required),
       fundStatus: new FormControl(null, Validators.required),
       attributeName: new FormControl(null, Validators.required),
-      watchThisFund: new FormControl(null, Validators.required)
+      watchThisFund: new FormControl(null, Validators.required),
+      customizedFundAttributes: new FormArray([])
     });
 
+    // print input values to the console upon user entering data
     this.createFundForm.valueChanges.subscribe((value: any) => {
       next: console.log(value);
     });
+
+    // nested form
+    this.fundInfoForm = new FormGroup({
+      fundSpec: new FormGroup({
+        fundType: new FormControl(null),
+        fundRegion: new FormControl(null),
+        fundMarket: new FormControl(null)
+      })
+    })
+
+    // print fund info form input to the console upon user enterinf data
+    this.fundInfoForm.valueChanges.subscribe((value: any) => { next: console.log(value)})
+
   }
 
   buttonType: string | any;
@@ -70,6 +87,23 @@ export class CreateFundComponent implements OnInit {
 
   onResetValueClick() {
     this.createFundForm.reset();
+  }
+
+  onSubmitFundInfo() {
+    this.fundInfoForm.valueChanges.subscribe((value: any) => { console.log(value)})
+  }
+
+  onAddCustomizedFundAttribute() {
+    var formGroup = new FormGroup({
+      attributeName: new FormControl(null),
+      attributeScope: new FormControl(null)
+    });
+
+    (<FormArray>this.createFundForm.get('customizedFundAttributes')).push(formGroup);
+  }
+
+  OnRemoveCuztomizedFundAttribute(index: number) {
+    (<FormArray>this.createFundForm.get('customizedFundAttributes')).removeAt(index);
   }
 
 }
