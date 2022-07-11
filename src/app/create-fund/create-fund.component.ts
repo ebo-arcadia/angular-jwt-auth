@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray} from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
 import { FundAttributes } from './fund-attributes';
 import { FundAttributesService } from './fund-attributes.service';
 
@@ -15,18 +15,18 @@ export class CreateFundComponent implements OnInit {
 
   fundInfoForm: FormGroup | any = null;
 
-  constructor(private fundAttributesService: FundAttributesService) { }
+  constructor(private fundAttributesService: FundAttributesService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.fundAttributes = this.fundAttributesService.getFundAttributes();
 
-    this.createFundForm = new FormGroup({
-      fundName: new FormControl(null, Validators.required),
-      benchmark: new FormControl(null, Validators.required),
-      fundStatus: new FormControl(null, Validators.required),
-      attributeName: new FormControl(null, Validators.required),
-      watchThisFund: new FormControl(null, Validators.required),
-      customizedFundAttributes: new FormArray([])
+    this.createFundForm = this.formBuilder.group({
+      fundName: ['', Validators.required],
+      benchmark: ['', Validators.required],
+      fundStatus: ['', Validators.required],
+      attributeName: ['', Validators.required],
+      watchThisFund: ['', Validators.required],
+      customizedFundAttributes: this.formBuilder.array([])
     });
 
     // print input values to the console upon user entering data
@@ -35,11 +35,11 @@ export class CreateFundComponent implements OnInit {
     });
 
     // nested form
-    this.fundInfoForm = new FormGroup({
-      fundSpec: new FormGroup({
-        fundType: new FormControl(null),
-        fundRegion: new FormControl(null),
-        fundMarket: new FormControl(null)
+    this.fundInfoForm = this.formBuilder.group({
+      fundSpec: this.formBuilder.group({
+        fundType: null,
+        fundRegion: null,
+        fundMarket: null
       })
     })
 
@@ -75,7 +75,8 @@ export class CreateFundComponent implements OnInit {
       benchmark: "sleeve gold",
       fundStatus: "launched",
       attributeName: "ETF",
-      watchThisFund: true
+      watchThisFund: true,
+      customizedFundAttributes: []
     });
   }
 
@@ -94,9 +95,9 @@ export class CreateFundComponent implements OnInit {
   }
 
   onAddCustomizedFundAttribute() {
-    var formGroup = new FormGroup({
-      attributeName: new FormControl(null),
-      attributeScope: new FormControl(null)
+    var formGroup = this.formBuilder.group({
+      attributeName: null,
+      attributeScope: null
     });
 
     (<FormArray>this.createFundForm.get('customizedFundAttributes')).push(formGroup);
