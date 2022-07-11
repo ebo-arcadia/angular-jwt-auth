@@ -141,6 +141,7 @@ in this Angular and Node.js project,
         [X] use set value, patch value, reset value to work with user input
         [X] implement nested form groups to keep form controls organzied
         [X] use form builder API service to refactor code using form group and form control
+        [X] implement user input validations in reactive forms
         [] add message to show error messages on the HTML page if errors returned by the validator
         [] define async validation passing it as an argument to form control
 

@@ -12,14 +12,23 @@
                     <div class="form-group form-row">
                         <label for="fundName"  class="col-md-4 col-form-label">Fund Name</label>
                         <div class="col-md-8">
-                            <input type="text" name="fundName" id="fundName" placeholder="e.g. Vanguard all-weather" class="form-control" formControlName="fundName">
+                            <input type="text" name="fundName" id="fundName" placeholder="e.g. Vanguard all-weather" class="form-control" formControlName="fundName"
+                            [ngClass]="{
+                                'is-invalid': createFundForm.get('fundName').invalid && (createFundForm.get('fundName').dirty || createFundForm.get('fundName').touched || createFundForm.submitted),
+                                'is-valid': createFundForm.get('fundName').valid && (createFundForm.get('fundName').dirty || createFundForm.get('fundName').touched || createFundForm.submitted)
+                            }">
                         </div>
                     </div>
 
                     <div class="form-group form-row">
                         <label for="benchmark"  class="col-md-4 col-form-label">Benchmark</label>
                         <div class="col-md-8">
-                            <input type="text" name="benchmark" id="benchmark" placeholder='e.g. S&P 500' class="form-control" formControlName="benchmark">
+                            <input type="text" name="benchmark" id="benchmark" placeholder='e.g. S&P 500' class="form-control" formControlName="benchmark"
+                            [ngClass]="{
+                                'is-invalid': createFundForm.get('benchmark').invalid && (createFundForm.get('benchmark').dirty || createFundForm.get('benchmark').touched || createFundForm.submitted),
+                                'is-valid': createFundForm.get('benchmark').valid && (createFundForm.get('benchmark').dirty || createFundForm.get('benchmark').touched || createFundForm.submitted)
+                            }"
+                            >
                         </div>
                     </div>
 
@@ -28,7 +37,12 @@
 
                         <div class="form-check-label form-check-inline" *ngFor="let status of fundStatus">
                             <label [for]="status" class="form-check-label">{{status}}</label>
-                            <input type="radio" name="fundStatus" [id]="status" [value]="status" class="form-check-input" formControlName="fundStatus">
+                            <input type="radio" name="fundStatus" [id]="status" [value]="status" class="form-check-input" formControlName="fundStatus"
+                            [ngClass]="{
+                                'is-invalid': createFundForm.get('fundStatus').invalid && (createFundForm.get('fundStatus').dirty || createFundForm.get('fundStatus').touched || createFundForm.submitted),
+                                'is-valid': createFundForm.get('fundStatus').valid && (createFundForm.get('fundStatus').dirty || createFundForm.get('fundStatus').touched || createFundForm.submitted)
+                            }"
+                            >
                         </div>
                     </div>
 
@@ -36,7 +50,12 @@
                     <div class="form-group form-row">
                         <label for="attributeID"  class="col-md-4 col-form-label">Fund Attribute: </label>
                         <div class="col-md-8">
-                            <select name="attributeID" id="attributeID" class="form-control" formControlName="attributeName">
+                            <select name="attributeID" id="attributeID" class="form-control" formControlName="attributeName" 
+                            [ngClass]="{
+                                'is-invalid': createFundForm.get('attributeName').invalid && (createFundForm.get('attributeName').dirty || createFundForm.get('attributeName').touched || createFundForm.submitted),
+                                'is-valid': createFundForm.get('attributeName').valid && (createFundForm.get('attributeName').dirty || createFundForm.get('attributeName').touched || createFundForm.submitted)
+                            }"
+                            >
                                 <option value="null">Selecte a fund attribute</option>
                                 <option *ngFor="let fundAttribute of fundAttributes" [value]="fundAttribute.attributeName">
                                     {{ fundAttribute.attributeName }}
@@ -60,11 +79,21 @@
                             <div *ngFor="let customizedFundAttribute of createFundForm.get('customizedFundAttributes').controls; let i = index" [formGroupName]="i">
 
                                 <div class="col-13 float-right">
-                                    <input type="text" name="attributeName" id="attributeName" placeholder="attribute name" class="form-control" formControlName="attributeName">
+                                    <input type="text" name="attributeName" id="attributeName" placeholder="attribute name" class="form-control" formControlName="attributeName"
+                                    [ngClass]="{
+                                        'is-invalid': customizedFundAttribute.get('attributeName').invalid && (customizedFundAttribute.get('attributeName').dirty || customizedFundAttribute.get('attributeName').touched || createFundForm.submitted),
+                                        'is-valid': customizedFundAttribute.get('attributeName').valid && (customizedFundAttribute.get('attributeName').dirty || createFundForm.get('attributeName').touched || createFundForm.submitted)
+                                    }"
+                                    >
                                 </div>
 
                                 <div class="col-13 float-right">
-                                    <select class="form-control" formControlName="attributeScope" name="attributeScope" id="attributeScope" name="attributeScope">
+                                    <select class="form-control" formControlName="attributeScope" name="attributeScope" id="attributeScope" name="attributeScope"
+                                    [ngClass]="{
+                                        'is-invalid': customizedFundAttribute.get('attributeScope').invalid && (customizedFundAttribute.get('attributeScope').dirty || customizedFundAttribute.get('attributeScope').touched || createFundForm.submitted),
+                                        'is-valid': customizedFundAttribute.get('attributeScope').valid && (customizedFundAttribute.get('attributeScope').dirty || createFundForm.get('attributeScope').touched || createFundForm.submitted)
+                                    }"
+                                    >
                                         <option value="null">Please select an attribute scope</option>
                                         <option>Fund-characteristics</option>
                                         <option>Fund-tradings</option>

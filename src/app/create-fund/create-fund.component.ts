@@ -21,8 +21,8 @@ export class CreateFundComponent implements OnInit {
     this.fundAttributes = this.fundAttributesService.getFundAttributes();
 
     this.createFundForm = this.formBuilder.group({
-      fundName: ['', Validators.required],
-      benchmark: ['', Validators.required],
+      fundName: ['', [Validators.required, Validators.minLength(4)]],
+      benchmark: ['', [Validators.required, Validators.minLength(4)]],
       fundStatus: ['', Validators.required],
       attributeName: ['', Validators.required],
       watchThisFund: ['', Validators.required],
@@ -67,6 +67,7 @@ export class CreateFundComponent implements OnInit {
 
   onPrintValueInConsoleClick() {
     console.log(this.createFundForm.value);
+    this.createFundForm["submitted"] = true;
   }
 
   onSetValueClick() {
@@ -96,8 +97,8 @@ export class CreateFundComponent implements OnInit {
 
   onAddCustomizedFundAttribute() {
     var formGroup = this.formBuilder.group({
-      attributeName: null,
-      attributeScope: null
+      attributeName: ['', [Validators.required, Validators.minLength(4)]],
+      attributeScope: ['', [Validators.required, Validators.minLength(4)]]
     });
 
     (<FormArray>this.createFundForm.get('customizedFundAttributes')).push(formGroup);
