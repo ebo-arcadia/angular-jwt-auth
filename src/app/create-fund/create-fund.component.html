@@ -143,24 +143,59 @@
             </div>
 
             <div class="card-body">
+
                 <div class="form-group form-row" formGroupName="fundSpec">
                     <label for="fundType"  class="col-md-4 col-form-label">Fund Type</label>
                     <div class="col-md-8">
-                        <input type="text" name="fundType" id="fundType" placeholder="e.g. ETF" class="form-control" formControlName="fundType">
+                        <input type="text" name="fundType" id="fundType" placeholder="e.g. ETF" class="form-control" formControlName="fundType"
+                        [ngClass]="{
+                            'is-invalid': fundInfoForm.get('fundSpec.fundType').invalid && (fundInfoForm.get('fundSpec.fundType').dirty || fundInfoForm.get('fundSpec.fundType').touched || fundInfoForm.submitted),
+                            'is-valid': fundInfoForm.get('fundSpec.fundType').valid && (fundInfoForm.get('fundSpec.fundType').dirty || fundInfoForm.get('fundSpec.fundType').touched || fundInfoForm.submitted)
+                        }">
+                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundType').errors?.required">Fund type is required</span>
+                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundType').errors?.minlength">Fund type requires min 4 characters</span>
                     </div>
                 </div>
+
                 <div class="form-group form-row" formGroupName="fundSpec">
                     <label for="fundRegion"  class="col-md-4 col-form-label">Fund Region</label>
                     <div class="col-md-8">
-                        <input type="text" name="fundRegion" id="fundRegion" placeholder="e.g. EUR" class="form-control" formControlName="fundRegion">
+                        <input type="text" name="fundRegion" id="fundRegion" placeholder="e.g. EUR" class="form-control" formControlName="fundRegion"
+                        [ngClass]="{
+                            'is-invalid': fundInfoForm.get('fundSpec.fundRegion').invalid && (fundInfoForm.get('fundSpec.fundRegion').dirty || fundInfoForm.get('fundSpec.fundRegion').touched || fundInfoForm.submitted),
+                            'is-valid': fundInfoForm.get('fundSpec.fundRegion').valid && (fundInfoForm.get('fundSpec.fundRegion').dirty || fundInfoForm.get('fundSpec.fundRegion').touched || fundInfoForm.submitted)
+                        }">
+                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundRegion').errors?.required">Fund region is required</span>
                     </div>
                 </div>
+
                 <div class="form-group form-row" formGroupName="fundSpec">
                     <label for="fundMarket"  class="col-md-4 col-form-label">Fund Market</label>
                     <div class="col-md-8">
-                        <input type="text" name="fundMarket" id="fundMarket" placeholder="e.g. NASDA" class="form-control" formControlName="fundMarket">
+                        <input type="text" name="fundMarket" id="fundMarket" placeholder="e.g. NASDA" class="form-control" formControlName="fundMarket"
+                        [ngClass]="{
+                            'is-invalid': fundInfoForm.get('fundSpec.fundMarket').invalid && (fundInfoForm.get('fundSpec.fundMarket').dirty || fundInfoForm.get('fundSpec.fundMarket').touched || fundInfoForm.submitted),
+                            'is-valid': fundInfoForm.get('fundSpec.fundMarket').valid && (fundInfoForm.get('fundSpec.fundMarket').dirty || fundInfoForm.get('fundSpec.fundMarket').touched || fundInfoForm.submitted)
+                        }">
+                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundMarket').errors?.required">Fund market is required</span>
                     </div>
                 </div>
+
+                <div class="form-group form-row" formGroupName="fundSpec">
+                    <label for="fundMarket"  class="col-md-4 col-form-label">Fund volume</label>
+                    <div class="col-md-8">
+                        <input type="text" name="fundMarket" id="fundMarket" placeholder="e.g. 300" class="form-control" formControlName="fundVolume"
+                        [ngClass]="{
+                            'is-invalid': fundInfoForm.get('fundSpec.fundVolume').invalid && (fundInfoForm.get('fundSpec.fundVolume').dirty || fundInfoForm.get('fundSpec.fundVolume').touched || fundInfoForm.submitted),
+                            'is-valid': fundInfoForm.get('fundSpec.fundVolume').valid && (fundInfoForm.get('fundSpec.fundVolume').dirty || fundInfoForm.get('fundSpec.fundVolume').touched || fundInfoForm.submitted)
+                        }">
+                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundVolume').invalid && (fundInfoForm.get('fundSpec.fundVolume').dirty || fundInfoForm.get('fundSpec.fundVolume').touched || fundInfoForm.submitted) && fundInfoForm.get('fundSpec.fundVolume').errors?.required">Fund volume is required</span>
+                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundVolume').invalid && (fundInfoForm.get('fundSpec.fundVolume').dirty || fundInfoForm.get('fundSpec.fundVolume').touched || fundInfoForm.submitted) && fundInfoForm.get('fundSpec.fundVolume').errors?.minFundVolume">Min fund volume must be 100</span>
+                    </div>
+                </div>
+
+
+
             </div>
 
             <div class="card-footer">

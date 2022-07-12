@@ -141,7 +141,8 @@ in this Angular and Node.js project,
         [X] add validator method to the attributes to validate in component
         [X] link validation to user input using class binding 
         [X] verify or test if input error highlight appear
-        [] add message to show error messages on the HTML page if errors returned by the validator
+        [X] add message to show error messages on the HTML page if errors returned by the validator
+        [] add custom validations in reactive forms
     6. additional features
         [X] detect changes made in the form elements in reactive forms?
         [X] use set value, patch value, reset value to work with user input

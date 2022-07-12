@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
 import { FundAttributes } from './fund-attributes';
 import { FundAttributesService } from './fund-attributes.service';
+import { CustomValidatorsService } from './custom-validators.service';
 
 @Component({
   selector: 'app-create-fund',
@@ -15,7 +16,7 @@ export class CreateFundComponent implements OnInit {
 
   fundInfoForm: FormGroup | any = null;
 
-  constructor(private fundAttributesService: FundAttributesService, private formBuilder: FormBuilder) { }
+  constructor(private fundAttributesService: FundAttributesService, private formBuilder: FormBuilder, private customValidatorsService: CustomValidatorsService) { }
 
   ngOnInit() {
     this.fundAttributes = this.fundAttributesService.getFundAttributes();
@@ -37,9 +38,10 @@ export class CreateFundComponent implements OnInit {
     // nested form
     this.fundInfoForm = this.formBuilder.group({
       fundSpec: this.formBuilder.group({
-        fundType: null,
-        fundRegion: null,
-        fundMarket: null
+        fundType: ['', [Validators.required, Validators.minLength(4)]],
+        fundRegion: ['', [Validators.required]],
+        fundMarket: ['', [Validators.required]],
+        fundVolume: ['', [Validators.required, this.customValidatorsService.minimumFundVolumeValidator(100)]]
       })
     })
 
