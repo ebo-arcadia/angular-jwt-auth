@@ -17,6 +17,9 @@
                                 'is-invalid': createFundForm.get('fundName').invalid && (createFundForm.get('fundName').dirty || createFundForm.get('fundName').touched || createFundForm.submitted),
                                 'is-valid': createFundForm.get('fundName').valid && (createFundForm.get('fundName').dirty || createFundForm.get('fundName').touched || createFundForm.submitted)
                             }">
+
+                            <span class="text-danger" *ngIf="createFundForm.get('fundName').invalid && (createFundForm.get('fundName').dirty || createFundForm.get('fundName').touched || createFundForm.submitted) && createFundForm.get('fundName').errors?.required">Fund Name can not be blank</span>
+                            <span class="text-danger" *ngIf="createFundForm.get('fundName').invalid && (createFundForm.get('fundName').dirty || createFundForm.get('fundName').touched || createFundForm.submitted) && createFundForm.get('fundName').errors?.minlength">Fund Name must be at least 4 characters</span>
                         </div>
                     </div>
 
@@ -29,6 +32,8 @@
                                 'is-valid': createFundForm.get('benchmark').valid && (createFundForm.get('benchmark').dirty || createFundForm.get('benchmark').touched || createFundForm.submitted)
                             }"
                             >
+                            <span class="text-danger" *ngIf="createFundForm.get('benchmark').invalid && (createFundForm.get('benchmark').dirty || createFundForm.get('benchmark').touched || createFundForm.submitted) && createFundForm.get('benchmark').errors?.required">benchmark can not be blank</span>
+                            <span class="text-danger" *ngIf="createFundForm.get('benchmark').invalid && (createFundForm.get('benchmark').dirty || createFundForm.get('benchmark').touched || createFundForm.submitted) && createFundForm.get('benchmark').errors?.minlength">benchmark must be at least 4 characters</span>
                         </div>
                     </div>
 
@@ -43,6 +48,8 @@
                                 'is-valid': createFundForm.get('fundStatus').valid && (createFundForm.get('fundStatus').dirty || createFundForm.get('fundStatus').touched || createFundForm.submitted)
                             }"
                             >
+
+                            <span class="text-danger" *ngIf="createFundForm.get('fundStatus').errors?.required">Please select a status for the fund</span>
                         </div>
                     </div>
 
@@ -61,6 +68,7 @@
                                     {{ fundAttribute.attributeName }}
                                 </option>
                             </select>
+                            <span class="text-danger" *ngIf="createFundForm.get('fundStatus').errors?.required">Please select an attribute for the fund</span>
                         </div>
                     </div>
 
@@ -87,6 +95,8 @@
                                     >
                                 </div>
 
+                                <span class="text-danger" *ngIf="customizedFundAttribute.get('attributeName').errors?.required">Please enter an attribute name</span>
+
                                 <div class="col-13 float-right">
                                     <select class="form-control" formControlName="attributeScope" name="attributeScope" id="attributeScope" name="attributeScope"
                                     [ngClass]="{
@@ -101,6 +111,8 @@
                                         <option>Fund-names</option>
                                     </select>
                                 </div>
+
+                                <span class="text-danger" *ngIf="customizedFundAttribute.get('attributeScope').errors?.required">Please provide an attribute scope</span>
 
                                 <div class="col-13">
                                     <button class="btn btn-danger float-right" type="button" (click)="OnRemoveCuztomizedFundAttribute(i)">Remove</button>
