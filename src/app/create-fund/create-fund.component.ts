@@ -41,7 +41,7 @@ export class CreateFundComponent implements OnInit {
         fundType: ['', [Validators.required, Validators.minLength(4)]],
         fundRegion: ['', [Validators.required]],
         fundMarket: ['', [Validators.required]],
-        fundVolume: ['', [Validators.required, this.customValidatorsService.minimumFundVolumeValidator(100)]]
+        fundSerialNum: ['', [Validators.required, this.customValidatorsService.createValidFundSerialNumber()]]
       })
     })
 

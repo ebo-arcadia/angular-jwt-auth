@@ -142,7 +142,7 @@ in this Angular and Node.js project,
         [X] link validation to user input using class binding 
         [X] verify or test if input error highlight appear
         [X] add message to show error messages on the HTML page if errors returned by the validator
-        [] add custom validations in reactive forms
+        [X] add custom validations in reactive forms & test if error message appear
     6. additional features
         [X] detect changes made in the form elements in reactive forms?
         [X] use set value, patch value, reset value to work with user input

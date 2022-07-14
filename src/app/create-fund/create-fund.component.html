@@ -182,15 +182,15 @@
                 </div>
 
                 <div class="form-group form-row" formGroupName="fundSpec">
-                    <label for="fundMarket"  class="col-md-4 col-form-label">Fund volume</label>
+                    <label for="fundSerialNum"  class="col-md-4 col-form-label">Fund Serial Number</label>
                     <div class="col-md-8">
-                        <input type="text" name="fundMarket" id="fundMarket" placeholder="e.g. 300" class="form-control" formControlName="fundVolume"
+                        <input type="text" name="fundSerialNum" id="fundSerialNum" placeholder="e.g. Cx09xB7" class="form-control" formControlName="fundSerialNum"
                         [ngClass]="{
-                            'is-invalid': fundInfoForm.get('fundSpec.fundVolume').invalid && (fundInfoForm.get('fundSpec.fundVolume').dirty || fundInfoForm.get('fundSpec.fundVolume').touched || fundInfoForm.submitted),
-                            'is-valid': fundInfoForm.get('fundSpec.fundVolume').valid && (fundInfoForm.get('fundSpec.fundVolume').dirty || fundInfoForm.get('fundSpec.fundVolume').touched || fundInfoForm.submitted)
+                            'is-invalid': fundInfoForm.get('fundSpec.fundSerialNum').invalid && (fundInfoForm.get('fundSpec.fundSerialNum').dirty || fundInfoForm.get('fundSpec.fundSerialNum').touched || fundInfoForm.submitted),
+                            'is-valid': fundInfoForm.get('fundSpec.fundSerialNum').valid && (fundInfoForm.get('fundSpec.fundSerialNum').dirty || fundInfoForm.get('fundSpec.fundSerialNum').touched || fundInfoForm.submitted)
                         }">
-                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundVolume').invalid && (fundInfoForm.get('fundSpec.fundVolume').dirty || fundInfoForm.get('fundSpec.fundVolume').touched || fundInfoForm.submitted) && fundInfoForm.get('fundSpec.fundVolume').errors?.required">Fund volume is required</span>
-                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundVolume').invalid && (fundInfoForm.get('fundSpec.fundVolume').dirty || fundInfoForm.get('fundSpec.fundVolume').touched || fundInfoForm.submitted) && fundInfoForm.get('fundSpec.fundVolume').errors?.minFundVolume">Min fund volume must be 100</span>
+                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundSerialNum').invalid && (fundInfoForm.get('fundSpec.fundSerialNum').dirty || fundInfoForm.get('fundSpec.fundSerialNum').touched || fundInfoForm.submitted) && fundInfoForm.get('fundSpec.fundSerialNum').errors?.required">Fund serial number is required</span>
+                        <span class="text-danger" *ngIf="fundInfoForm.get('fundSpec.fundSerialNum').invalid && (fundInfoForm.get('fundSpec.fundSerialNum').dirty || fundInfoForm.get('fundSpec.fundSerialNum').touched || fundInfoForm.submitted) && fundInfoForm.get('fundSpec.fundSerialNum').errors?.hasStrongFundSerialNumber">Serial number must contains upper & lower case & numbers</span>
                     </div>
                 </div>
 
