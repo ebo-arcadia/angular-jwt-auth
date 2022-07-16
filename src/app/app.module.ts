@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { CreateFundComponent } from './create-fund/create-fund.component';
+import { StrongPasswordValidatorDirective } from './_services/strong-password-validator.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CreateFundComponent } from './create-fund/create-fund.component';
     BoardAdminComponent,
     BoardConsumerComponent,
     BoardDeveloperComponent,
-    CreateFundComponent
+    CreateFundComponent,
+    StrongPasswordValidatorDirective
   ],
   imports: [
     BrowserModule,

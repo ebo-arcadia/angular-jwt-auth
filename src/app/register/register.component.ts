@@ -13,7 +13,8 @@ export class RegisterComponent implements OnInit {
   form: any = {
     username: null,
     password: null,
-    email: null
+    email: null,
+    confirmPassword: null
   };
 
   isSuccessful = false;

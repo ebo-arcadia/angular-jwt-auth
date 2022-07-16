@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
 import { FundAttributes } from './fund-attributes';
 import { FundAttributesService } from './fund-attributes.service';
-import { CustomValidatorsService } from './custom-validators.service';
+import { CustomValidatorsService } from '../_services/custom-validators.service';
 
 @Component({
   selector: 'app-create-fund',
@@ -39,11 +39,13 @@ export class CreateFundComponent implements OnInit {
     this.fundInfoForm = this.formBuilder.group({
       fundSpec: this.formBuilder.group({
         fundType: ['', [Validators.required, Validators.minLength(4)]],
+        confirmFundType: ['', [Validators.required]],
         fundRegion: ['', [Validators.required]],
         fundMarket: ['', [Validators.required]],
-        fundSerialNum: ['', [Validators.required, this.customValidatorsService.createValidFundSerialNumber()]]
+        fundSerialNum: ['', [Validators.required, this.customValidatorsService.createValidFundSerialNumber()]],
+        validators: [this.customValidatorsService.compareValidator("fundType", "confirmFundType")]
       })
-    })
+    });
 
     // print fund info form input to the console upon user enterinf data
     this.fundInfoForm.valueChanges.subscribe((value: any) => { next: console.log(value)})

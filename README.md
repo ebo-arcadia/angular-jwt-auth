@@ -151,6 +151,11 @@ in this Angular and Node.js project,
         [] define async validation passing it as an argument to form control
 
 ### create a sign up portal using template-driven forms technique
+    1. implement validation of "password and confirm password must be the same"
+        [X] create two input fields for password and confirm password
+        [X] create custom validation service and a method to receive the two inputs
+        [X] create validation function with logic to match the two
+        [X] conditionally render error messages on the html page if two passwords do not match
 
 ## for Node JS
     todo: JWT refresh token implementation
