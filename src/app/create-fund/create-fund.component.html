@@ -202,14 +202,25 @@
                     </div>
                 </div>
 
-
-
             </div>
 
             <div class="card-footer">
-                <button class="btn btn-warning float-left">Submit fund type</button>
+                <button class="btn btn-warning float-left" type="submit">Submit fund info</button>
             </div>
         </form>
+
+        <!-- display fund info -->
+        <div class="fundInfo">
+            <div *ngFor="let fundInfo of fundInformation">
+                <span> {{fundInfo.fundType}} </span>
+                <span> {{fundInfo.fundMarket}} </span>
+                <span> {{fundInfo.fundRegion}} </span>
+                <span> {{fundInfo.fundSerialNumber}} </span>
+            </div>
+        <div>
+
+            </div>
+        </div>
 
     </div>
 </div>

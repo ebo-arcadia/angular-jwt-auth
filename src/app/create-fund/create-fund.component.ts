@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray, FormBuilder} from '@angu
 import { FundAttributes } from './fund-attributes';
 import { FundAttributesService } from './fund-attributes.service';
 import { CustomValidatorsService } from '../_services/custom-validators.service';
+import { FundInfoService } from '../_services/fund-info.service';
 
 @Component({
   selector: 'app-create-fund',
@@ -13,10 +14,11 @@ export class CreateFundComponent implements OnInit {
   createFundForm: FormGroup | any = null;
   fundStatus = ["launched", "pre-launch"];
   fundAttributes: FundAttributes[] = [];
+  fundInformation = this.fundInfoService.getFundInfo();
 
   fundInfoForm: FormGroup | any = null;
 
-  constructor(private fundAttributesService: FundAttributesService, private formBuilder: FormBuilder, private customValidatorsService: CustomValidatorsService) { }
+  constructor(private fundAttributesService: FundAttributesService, private formBuilder: FormBuilder, private customValidatorsService: CustomValidatorsService, private fundInfoService: FundInfoService) { }
 
   ngOnInit() {
     this.fundAttributes = this.fundAttributesService.getFundAttributes();
@@ -96,7 +98,10 @@ export class CreateFundComponent implements OnInit {
   }
 
   onSubmitFundInfo() {
-    this.fundInfoForm.valueChanges.subscribe((value: any) => { console.log(value)})
+    this.fundInfoService.addFundInfo(this.fundInfoForm.value)
+    console.warn('fund info has been submitted', this.fundInformation)
+    this.fundInfoService.clearFundInfoForm;
+    this.fundInfoForm.reset();
   }
 
   onAddCustomizedFundAttribute() {

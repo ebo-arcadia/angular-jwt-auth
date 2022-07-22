@@ -1,5 +1,3 @@
-import { ThisReceiver } from "@angular/compiler";
-
 export class FundInfo {
     fundType: string | any = null;
     fundRegion: string | any = null;
