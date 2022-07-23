@@ -4,6 +4,7 @@ import { FundAttributes } from './fund-attributes';
 import { FundAttributesService } from './fund-attributes.service';
 import { CustomValidatorsService } from '../_services/custom-validators.service';
 import { FundInfoService } from '../_services/fund-info.service';
+import { AsynValidatorService } from '../_services/asyn-validator.service';
 
 @Component({
   selector: 'app-create-fund',
@@ -24,7 +25,11 @@ export class CreateFundComponent implements OnInit {
     this.fundAttributes = this.fundAttributesService.getFundAttributes();
 
     this.createFundForm = this.formBuilder.group({
-      fundName: ['', [Validators.required, Validators.minLength(4)]],
+      fundName: [
+        '', 
+        [Validators.required, Validators.minLength(4)],
+        [AsynValidatorService.checkIfExistingFundNames(this.fundInfoService)],
+      ],
       benchmark: ['', [Validators.required, Validators.minLength(4)]],
       fundStatus: ['', Validators.required],
       attributeName: ['', Validators.required],

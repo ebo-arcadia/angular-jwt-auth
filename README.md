@@ -148,10 +148,10 @@ in this Angular and Node.js project,
         [X] use set value, patch value, reset value to work with user input
         [X] implement nested form groups to keep form controls organzied
         [X] use form builder API service to refactor code using form group and form control
-        [] define async validation passing it as an argument to form control
+        [] use async validation to validate duplicate input value in real time against database
     7. knowledge gap catching up
         [X] define data structure for user input
-        [] handle submit implementing http call and using observable API in reactive form
+        [X] handle submit implementing http call and using observable API in reactive form
         [] debug cross field custom validator error message not appear
 
 ### create a sign up portal using template-driven forms technique
